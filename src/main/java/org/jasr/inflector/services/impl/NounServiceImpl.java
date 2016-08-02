@@ -7,6 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class NounServiceImpl implements NounService{
 
     @Autowired
-    private NounRepository sustantiveRepository;
+    private NounRepository nounRepository;
     
 }
