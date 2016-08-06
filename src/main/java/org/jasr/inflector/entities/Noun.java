@@ -11,8 +11,9 @@ public class Noun {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long    id;
-    private String  word;
-    private boolean singular;
+    private String singular;
+    private String plural;
+    private String rule;
 
     public Long getId() {
         return id;
@@ -22,20 +23,28 @@ public class Noun {
         this.id = id;
     }
 
-    public String getWord() {
-        return word;
-    }
-
-    public void setWord(String word) {
-        this.word = word;
-    }
-
-    public boolean isSingular() {
+    public String getSingular() {
         return singular;
     }
 
-    public void setSingular(boolean singular) {
+    public void setSingular(String singular) {
         this.singular = singular;
+    }
+
+    public String getPlural() {
+        return plural;
+    }
+
+    public void setPlural(String plural) {
+        this.plural = plural;
+    }
+
+    public String getRule() {
+        return rule;
+    }
+
+    public void setRule(String rule) {
+        this.rule = rule;
     }
 
 }
