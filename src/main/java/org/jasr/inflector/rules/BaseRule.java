@@ -4,14 +4,16 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 public abstract class BaseRule implements Rule {
 
     protected Map<String, String> nonAccented = new HashMap<String, String>();
     protected Set<String>         accented    = new HashSet<String>();
     protected Map<String, String> exceptions  = new HashMap<String, String>();
+    protected Pattern             rule;
 
-    BaseRule() {
+    public BaseRule() {
         accented.add("á");
         accented.add("é");
         accented.add("í");
@@ -49,6 +51,11 @@ public abstract class BaseRule implements Rule {
         nonAccented.put("x", "x");
         nonAccented.put("y", "y");
         nonAccented.put("z", "z");
+    }
+    
+    @Override
+    public boolean doesApply(String singular) {
+        return singular.length() > 1 && rule.matcher(singular).matches();
     }
 
 }

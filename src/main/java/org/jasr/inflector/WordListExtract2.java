@@ -16,6 +16,7 @@ import org.jasr.inflector.rules.Rule5;
 import org.jasr.inflector.rules.Rule6;
 import org.jasr.inflector.rules.Rule7;
 import org.jasr.inflector.rules.Rule8;
+import org.jasr.inflector.rules.Rule9;
 
 public class WordListExtract2 {
 
@@ -36,23 +37,25 @@ public class WordListExtract2 {
         reader.close();
         FileWriter writer = new FileWriter(notApplied);
 
-        Rule rule1 = new Rule1();
-        FileWriter excRule1 = new FileWriter(new File("C:/Users/jorge.amado/Desktop/Inflector/excRule1.txt"),true);
         Rule rule2 = new Rule2();
-        FileWriter excRule2 = new FileWriter(new File("C:/Users/jorge.amado/Desktop/Inflector/excRule2.txt"),true);
+        FileWriter excRule2 = new FileWriter(new File("C:/Users/jorge.amado/Desktop/Inflector/excRule2.txt"));;
+        Rule rule1 = new Rule1();
+        FileWriter excRule1 = new FileWriter(new File("C:/Users/jorge.amado/Desktop/Inflector/excRule1.txt"));;
         Rule rule3 = new Rule3();
-        FileWriter excRule3 = new FileWriter(new File("C:/Users/jorge.amado/Desktop/Inflector/excRule3.txt"),true);
+        FileWriter excRule3 = new FileWriter(new File("C:/Users/jorge.amado/Desktop/Inflector/excRule3.txt"));;
 
         Rule rule4 = new Rule4();
-        FileWriter excRule4 = new FileWriter(new File("C:/Users/jorge.amado/Desktop/Inflector/excRule4.txt"),true);
+        FileWriter excRule4 = new FileWriter(new File("C:/Users/jorge.amado/Desktop/Inflector/excRule4.txt"));;
         Rule rule5 = new Rule5();
-        FileWriter excRule5 = new FileWriter(new File("C:/Users/jorge.amado/Desktop/Inflector/excRule5.txt"),true);
+        FileWriter excRule5 = new FileWriter(new File("C:/Users/jorge.amado/Desktop/Inflector/excRule5.txt"));;
         Rule rule6 = new Rule6();
-        FileWriter excRule6 = new FileWriter(new File("C:/Users/jorge.amado/Desktop/Inflector/excRule6.txt"),true);
+        FileWriter excRule6 = new FileWriter(new File("C:/Users/jorge.amado/Desktop/Inflector/excRule6.txt"));;
         Rule rule7 = new Rule7();
-        FileWriter excRule7 = new FileWriter(new File("C:/Users/jorge.amado/Desktop/Inflector/excRule7.txt"),true);
+        FileWriter excRule7 = new FileWriter(new File("C:/Users/jorge.amado/Desktop/Inflector/excRule7.txt"));;
         Rule rule8 = new Rule8();
-        FileWriter excRule8 = new FileWriter(new File("C:/Users/jorge.amado/Desktop/Inflector/excRule8.txt"),true);
+        FileWriter excRule8 = new FileWriter(new File("C:/Users/jorge.amado/Desktop/Inflector/excRule8.txt"));;
+        Rule rule9 = new Rule9();
+        FileWriter excRule9 = new FileWriter(new File("C:/Users/jorge.amado/Desktop/Inflector/excRule9.txt"));;
 
         boolean flag = true;
         for (int i = 0; i < singulars.size(); i++) {
@@ -63,7 +66,8 @@ public class WordListExtract2 {
                     || applyRule(excRule5, rule5, singulars.get(i), plurals.get(i))
                     || applyRule(excRule6, rule6, singulars.get(i), plurals.get(i))
                     || applyRule(excRule7, rule7, singulars.get(i), plurals.get(i))
-                    || applyRule(excRule8, rule8, singulars.get(i), plurals.get(i));
+                    || applyRule(excRule8, rule8, singulars.get(i), plurals.get(i))
+            || applyRule(excRule9, rule9, singulars.get(i), plurals.get(i));
 
             if (!flag) {
                 writer.write(singulars.get(i) + " " + plurals.get(i) + "\n");
@@ -77,6 +81,7 @@ public class WordListExtract2 {
             excRule6.flush();
             excRule7.flush();
             excRule8.flush();
+            excRule9.flush();
         }
         
         excRule1.close();
@@ -87,6 +92,7 @@ public class WordListExtract2 {
         excRule6.close();
         excRule7.close();
         excRule8.close();
+        excRule9.close();
         writer.close();
     }
 

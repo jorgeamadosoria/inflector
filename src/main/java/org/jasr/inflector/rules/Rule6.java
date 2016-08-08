@@ -1,19 +1,13 @@
 package org.jasr.inflector.rules;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.regex.Pattern;
 
 public class Rule6 extends BaseRule {
-    Pattern             rule       = Pattern.compile(".*(á|é|í|ó|ú)(s|x)");
-    Map<String, String> exceptions = new HashMap<String, String>();
 
     public Rule6() {
+        rule       = Pattern.compile(".*(a|e|i|o|u)(s|x)");
     }
 
-    /* (non-Javadoc)
-     * @see org.jasr.inflector.rules.Rule#apply(java.lang.String)
-     */
     @Override
     public String apply(String singular){
         if (doesApply(singular)){
@@ -29,11 +23,4 @@ public class Rule6 extends BaseRule {
         return null;
     }
 
-    /* (non-Javadoc)
-     * @see org.jasr.inflector.rules.Rule#doesApply(java.lang.String)
-     */
-    @Override
-    public boolean doesApply(String singular) {
-        return rule.matcher(singular).matches();
-    }
 }

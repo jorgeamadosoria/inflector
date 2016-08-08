@@ -3,17 +3,23 @@ package org.jasr.inflector.rules;
 import java.util.regex.Pattern;
 
 public class Rule1 extends BaseRule {
-    Pattern             rule       = Pattern.compile(".*(a|e|i|o|u|á|í|ú|ó|é|b|c|f|g|h|k|m|ñ|p|q|t|v|w)");
-    
 
     public Rule1() {
+        rule       = Pattern.compile(".*(a|e|i|o|u|á|í|ú|ó|é|b|c|f|g|h|k|m|ñ|p|q|t|v|w)");
         exceptions.put("acarpo", "acarpa");
         exceptions.put("afro", "afro");
         exceptions.put("basoto", "basoto");
+        exceptions.put("doce", "doce");
+        exceptions.put("trece", "trece");
+        exceptions.put("catorce", "catorce");
+        exceptions.put("quince", "quince");
+        exceptions.put("diecisiete", "diecisiete");
         exceptions.put("dieciocho", "dieciocho");
+        exceptions.put("diecinueve", "diecinueve");
         exceptions.put("lao", "lao");
         exceptions.put("noúmeno", "noumena");
         exceptions.put("no", "noes");
+        exceptions.put("cu", "cúes");
         exceptions.put("o", "oes");
         exceptions.put("sí", "síes");
         exceptions.put("platino", "platino");
@@ -49,17 +55,6 @@ public class Rule1 extends BaseRule {
             return singular + "s";
         }
         return null;
-    }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.jasr.inflector.rules.Rule#doesApply(java.lang.String)
-     */
-    @Override
-    public boolean doesApply(String singular) {
-
-        return rule.matcher(singular).matches();
     }
 
 }

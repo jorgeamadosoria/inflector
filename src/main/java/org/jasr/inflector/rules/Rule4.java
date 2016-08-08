@@ -1,39 +1,34 @@
 package org.jasr.inflector.rules;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.regex.Pattern;
 
-public class Rule4 implements Rule {
-    Pattern             rule       = Pattern.compile(".*n");
-    Map<String, String> exceptions = new HashMap<String, String>();
+public class Rule4 extends BaseRule {
 
     public Rule4() {
-             
+        rule = Pattern.compile(".*(d|j|l|r|n)");
         exceptions.put("espécimen", "especímenes");
         exceptions.put("régimen", "regímenes");
         exceptions.put("hipérbaton", "hipérbatos");
     }
 
-    /* (non-Javadoc)
-     * @see org.jasr.inflector.rules.Rule#apply(java.lang.String)
-     */
     @Override
-    public String apply(String singular){
-        if (doesApply(singular)){
+    public String apply(String singular) {
+        if (doesApply(singular)) {
             if (exceptions.containsKey(singular))
                 return exceptions.get(singular);
-           return singular.substring(0,singular.lastIndexOf("ón")) + "ones";
-           
+
+            if (singular.endsWith("ón"))
+                return singular.substring(0, singular.lastIndexOf("ón")) + "ones";
+            if (singular.endsWith("ín"))
+                return singular.substring(0, singular.lastIndexOf("ín")) + "ines";
+            if (singular.endsWith("én"))
+                return singular.substring(0, singular.lastIndexOf("én")) + "enes";
+            if (singular.endsWith("án"))
+                return singular.substring(0, singular.lastIndexOf("án")) + "anes";
+            return singular + "es";
+
         }
         return null;
     }
 
-    /* (non-Javadoc)
-     * @see org.jasr.inflector.rules.Rule#doesApply(java.lang.String)
-     */
-    @Override
-    public boolean doesApply(String singular) {
-        return rule.matcher(singular).matches();
-    }
 }

@@ -1,37 +1,33 @@
 package org.jasr.inflector.rules;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.regex.Pattern;
 
-public class Rule8 implements Rule {
-
-    Pattern             rule       = Pattern.compile(".*(a|e|i|o|u)y");
-    Map<String, String> exceptions = new HashMap<String, String>();
+public class Rule8 extends BaseRule {
 
     public Rule8() {
-       // exceptions.put(key, value)
+        rule = Pattern.compile(".*(a|e|i|o|u)y");
+        exceptions.put("aguapey", "aguapeys");
+        exceptions.put("boy", "boys");
+        exceptions.put("caituy", "caitúis");
+        exceptions.put("coicoy", "coicóis");
+        exceptions.put("delay", "delays");
+        exceptions.put("gay", "gais");
+        exceptions.put("guay", "guais");
+        exceptions.put("guirigay", "guirigais");
+        exceptions.put("jersey", "jerseys");
+        exceptions.put("malay", "malays");
+        exceptions.put("patay", "patays");
     }
 
-    /* (non-Javadoc)
-     * @see org.jasr.inflector.rules.Rule#apply(java.lang.String)
-     */
     @Override
-    public String apply(String singular){
-        if (doesApply(singular)){
+    public String apply(String singular) {
+        if (doesApply(singular)) {
             if (exceptions.containsKey(singular))
                 return exceptions.get(singular);
-            
-           return singular + "es";
+
+            return singular + "es";
         }
         return null;
     }
 
-    /* (non-Javadoc)
-     * @see org.jasr.inflector.rules.Rule#doesApply(java.lang.String)
-     */
-    @Override
-    public boolean doesApply(String singular) {
-        return rule.matcher(singular).matches();
-    }
 }
