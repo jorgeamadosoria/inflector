@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Facundia Demo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Cardinal Numbers</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Syllabes</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Pluralization</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">...</div>
+    <div role="tabpanel" class="tab-pane" id="profile">...</div>
+    <div role="tabpanel" class="tab-pane" id="messages">...</div>
+    <div role="tabpanel" class="tab-pane" id="settings">...</div>
+  </div>
+
+</div>
+	<div id="cardinal-results"></div>
+	<div id="syllabicate-results"></div>
+	<div id="singular-results"></div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		function cardinal(number) {
+			/*	$.get("features/cardinal", {
+					"number" : number
+				}, function(data) {
+					$("#cardinal-results").text(data);
+				});*/
+			$("#cardinal-results").text("cien");
+		};
+
+		function syllabicate(word) {
+			/*	$.get("features/syllabicate", {
+					"word" : word
+				}, function(data) {
+					$("#syllabicate-results").text(data);
+				});*/
+			$("#syllabicate-results").text("es,tán,dar");
+		};
+
+		function inflection(singular) {
+			/*	$.get("features/inflection", {
+					"singular" : singular
+				}, function(data) {
+					$("#singular-results").text(data);
+				});
+			 */
+			$("#singular-results").text("estándares");
+		};
+		inflection("estándar");
+		syllabicate("estándar");
+		cardinal("100");
+	</script>
+</body>
+</html>
