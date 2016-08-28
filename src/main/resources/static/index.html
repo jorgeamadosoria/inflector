@@ -5,29 +5,62 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/font-awesome-animation.min.css" rel="stylesheet">
+<link href="css/version.css" rel="stylesheet">
 </head>
 <body>
-<div>
+	<nav class="navbar navbar-default">
+		<div class="title navbar-header">Facundia Demo</div>
+	</nav>
+	<div id="page-wrapper">
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3">
+			<form class="navbar-form navbar-left" role="search">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="cardinal number in text form">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="button">Go!</button>
+					</span>
+				</div>
+				</form>
+				<div>
+				<p id="cardinal-results"></p>
+				</div>
+		</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3">
+			<form class="navbar-form navbar-left" role="search">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="syllabes for a word">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="button">Go!</button>
+					</span>
+				</div>
+				</form>
+				<div>
+				<p id="syllabicate-results"></p>
+				</div>
+		</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3">
+			<form class="navbar-form navbar-left" role="search">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Plural for a word">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="button">Go!</button>
+					</span>
+				</div>
+				</form>
+				<div>
+				<p id="singular-results"></p>
+				</div>
+		</div>
+		</div>
+	</div>
 
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Cardinal Numbers</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Syllabes</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Pluralization</a></li>
-  </ul>
 
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">...</div>
-    <div role="tabpanel" class="tab-pane" id="profile">...</div>
-    <div role="tabpanel" class="tab-pane" id="messages">...</div>
-    <div role="tabpanel" class="tab-pane" id="settings">...</div>
-  </div>
-
-</div>
-	<div id="cardinal-results"></div>
-	<div id="syllabicate-results"></div>
-	<div id="singular-results"></div>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script>
