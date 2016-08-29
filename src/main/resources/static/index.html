@@ -6,94 +6,290 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link href="css/font-awesome-animation.min.css" rel="stylesheet">
-<link href="css/version.css" rel="stylesheet">
+<link href="css/inflector.css" rel="stylesheet">
 </head>
 <body>
 	<nav class="navbar navbar-default">
-		<div class="title navbar-header">Facundia Demo</div>
+		<div class="title navbar-header"><h1>Facundia <small>features demo</small></h1></div>
+		<div class="navbar-top-links pull-right">
+					<ul class="list-group list-inline">
+						<li><a title="mail the developer"
+							class="btn btn-circle btn-default"
+							href="mailto:darksoul.uci@gmail.com"><span
+								class="text-primary"><i class="fa fa-envelope"></i></span></a></li>
+						<li><a title="get the code on github"
+							class="btn btn-circle btn-default"
+							href="https://github.com/jorgeamadosoria/inflector"><span
+								class="text-primary"><i class="fa fa-github"></i></span></a></li>
+						<li><a title="my profile on linkedIn"
+							class="btn btn-circle btn-default"
+							href="https://www.linkedin.com/in/jorge-soria-98323122"><span
+								class="text-primary"><i class="fa fa-linkedin"></i></span></a></li>
+								
+					</ul>
+			</div>
+		
 	</nav>
 	<div id="page-wrapper">
 		<div class="row">
-			<div class="col-lg-6 col-lg-offset-3">
-			<form class="navbar-form navbar-left" role="search">
-				<div class="input-group">
-					<input type="text" class="form-control" placeholder="cardinal number in text form">
-					<span class="input-group-btn">
-						<button class="btn btn-default" type="button">Go!</button>
-					</span>
+			<div class="col-md-6 col-md-offset-1">
+				<div class="tabbable-panel">
+					<div class="tabbable-line">
+						<ul class="nav nav-tabs ">
+							<li class="active">
+								<a data-toggle="tab" href="#cardinal">Cardinal numbers</a>
+							</li>
+							<li>
+								<a data-toggle="tab" href="#syllabicate">Syllabes</a>
+							</li>
+							<li>
+								<a data-toggle="tab" href="#plural">Plural</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+						<div class="tab-pane active" id="cardinal">
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1">
+									<form class="">
+										<div class="input-group">
+											<input id="cardinalInput" type="text" maxlength="30" class="form-control" placeholder="number to show in written form">
+											<span class="input-group-btn">
+												<button id="cardinalBtn" class="btn btn-default" type="button">Go!</button>
+											</span>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1">
+									<br/>
+									<div class="well well-md">
+										<p id = "cardinal-results"></p>
+									</div>
+								</div>
+							</div>
+							<div id = "cardinal-links" class="row" style="display:none">
+								<div class="col-md-11">
+								<ul class="nav nav-pills pull-right">
+									<li><a href="https://github.com/jorgeamadosoria/facundia/blob/master/README.md#funcionalidades">How does this work?&nbsp;<i class="fa fa-external-link"></i></a></li>
+									<li><a href="#" id = "cardinalErrorLink">Report as error</a></li>
+									<li><a href="#" class="text-danger" id = "cardinalErrorReported" style="display:none">Error Reported</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="syllabicate">
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1">
+									<form class="">
+										<div class="input-group">
+											<input id = "syllabeInput" type="text" class="form-control" placeholder="word to split into syllabes">
+											<span class="input-group-btn">
+												<button id = "syllabeBtn" class="btn btn-default" type="button">Go!</button>
+											</span>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1">
+									<br/>
+									<div class="well well-md">
+										<p id = "syllabicate-results"></p>
+									</div>
+								</div>
+							</div>
+							<div id = "syllabe-links" class="row" style="display:none">
+								<div class="col-md-11">
+								<ul class="nav nav-pills pull-right">
+									<li><a href="https://github.com/jorgeamadosoria/facundia/blob/master/README.md#funcionalidades">How does this work?&nbsp;<i class="fa fa-external-link"></i></a></li>
+									<li><a href="#" id = "syllabeErrorLink">Report as error</a></li>
+									<li><a href="#" class="text-danger" id = "syllabeErrorReported" style="display:none">Error Reported</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="plural">
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1">
+									<form class="">
+										<div class="input-group">
+											<input id="pluralInput" type="text" class="form-control" placeholder="word to pluralize">
+											<span class="input-group-btn">
+												<button id="pluralBtn" class="btn btn-default" type="button">Go!</button>
+											</span>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1">
+									<br/>
+									<div class="well well-md">
+										<p id = "plural-results"></p>
+									</div>
+								</div>
+							</div>
+							<div id = "plural-links" class="row" style="display:none">
+								<div class="col-md-11">
+								<ul class="nav nav-pills pull-right">
+									<li><a href="https://github.com/jorgeamadosoria/facundia/blob/master/README.md#funcionalidades">How does this work?&nbsp;<i class="fa fa-external-link"></i></a></li>
+									<li><a href="#" id = "pluralErrorLink">Report as error</a></li>
+									<li><a href="#" class="text-danger" id = "pluralErrorReported" style="display:none">Error Reported</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					</div>
 				</div>
-				</form>
-				<div>
-				<p id="cardinal-results"></p>
+			</div>
+			<div class="col-md-4 col-md-offset-1">
+				<div class="tabbable-panel">
+					<div class="tabbable-line">
+						<ul class="nav nav-tabs ">
+							<li class="active">
+								<a data-toggle="tab" href="#about">What is it?</a>
+							</li>
+							<li>
+								<a data-toggle="tab" href="#github">Code</a>
+							</li>
+							<li>
+								<a data-toggle="tab" href="#jitpack">How to use it</a>
+							</li>
+							<li>
+								<a data-toggle="tab" href="#next">What's next?</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane active" id="about">
+								<div class="row">
+									<div class="col-md-10 col-md-offset-1">
+										<p>Facundia is a library for simple manipulation of single words in Spanish. <a href="https://en.wikipedia.org/wiki/Rifleman's_Creed">There are many like it, but this one is mine.&nbsp;<i class="fa fa-external-link"></i></a> It does not use an API or DB, does not have external dependencies, and can be included on any Java project using Maven. <a href="https://github.com/jorgeamadosoria/facundia/blob/master/README.md">More info&nbsp;<i class="fa fa-external-link"></i></a></p>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="github">
+								<div class="row">
+									<div class="col-md-10 col-md-offset-1">
+										<p>The Facundia library is free under <a href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache Software License 2.0&nbsp;<i class="fa fa-external-link"></i></a></p>
+										<p>Anyone can have access to the <a href="https://github.com/jorgeamadosoria/facundia">code on Github&nbsp;<i class="fa fa-external-link"></i></a></p>
+										<p>Contributions are more than welcome!</p>
+									</div>
+								</div>
+								
+							</div>
+							<div class="tab-pane" id="jitpack">
+								<div class="row">
+									<div class="col-md-10 col-md-offset-1">
+										<p><a href="https://jitpack.io/">Jitpack&nbsp;<i class="fa fa-external-link"></i></a> is an awesome site that allows you to release in Github and use those releases as Maven dependencies on other projects.</p>
+										<p>The badge below will allow the inclusion of any version of Facundia in your project:
+										<a href="https://jitpack.io/#jorgeamadosoria/facundia">
+											<img src="https://jitpack.io/v/jorgeamadosoria/facundia.svg">
+										</a>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="next">
+								<div class="row">
+									<div class="col-md-12">
+									<ul>
+										<li>Negative numbers</li>
+										<li>Plural detection</li>
+										<li>Infinitesimal numbers</li>
+										<li>Ordinal numbers</li>
+										<li>Verb conjugations! Although, Spanish verbs are <a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/Understatement">somewhat complex&nbsp;<i class="fa fa-external-link"></i></a>, so this is going to take a while</li>
+										<li>Want something else? <a href="https://github.com/jorgeamadosoria/facundia/issues/new">Create an issue</a> or <a href="mailto:darksoul.uci@gmail.com">email me.</a></li>
+									</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-		</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-6 col-lg-offset-3">
-			<form class="navbar-form navbar-left" role="search">
-				<div class="input-group">
-					<input type="text" class="form-control" placeholder="syllabes for a word">
-					<span class="input-group-btn">
-						<button class="btn btn-default" type="button">Go!</button>
-					</span>
-				</div>
-				</form>
-				<div>
-				<p id="syllabicate-results"></p>
-				</div>
-		</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-6 col-lg-offset-3">
-			<form class="navbar-form navbar-left" role="search">
-				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Plural for a word">
-					<span class="input-group-btn">
-						<button class="btn btn-default" type="button">Go!</button>
-					</span>
-				</div>
-				</form>
-				<div>
-				<p id="singular-results"></p>
-				</div>
-		</div>
+			</div>
 		</div>
 	</div>
+	<nav class="navbar navbar-default navbar-fixed-bottom">
+  
+			<div class="col-md-2 col-md-offset-5 text-center">
+				2016 - Facundia Demo
+			</div>
+				<div class="col-md-5 text-center">
+					<ul class="list-group list-inline">
+						<li><a href="http://dle.rae.es/">Diccionario RAE</a></li>
+						<li><a href="http://numeros-a-letras.todala.info">Números a letras</a></li>
+						<li><a href="http://www.conjugacion.es">Conjugaciones</a></li>
+						<li><a href="https://jitpack.io">Jitpack</a></li>
+						<li><a href="https://ifttt.com">IFTTT</a></li>
+					</ul>
+				</div>
+  
+</nav>
 
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script>
+	
+		function reportError(value1,value2,value3,errorLink,errorReportedLink) {
+			$.ajax({url:"https://maker.ifttt.com/trigger/facundia_error/with/key/clruygAx3eUqau0Aj5dGU4", 
+				data: { "value1" : value1, "value2" : value2,  "value3" : value3}, 
+				complete:function(data) {
+				$(errorLink).hide();
+				$(errorReportedLink).show();
+			}});
+		//	$("#syllabicate-results").text("es,tán,dar");
+		};
+	
 		function cardinal(number) {
-			/*	$.get("features/cardinal", {
+				$("#cardinal-links").hide();
+				$("#cardinalErrorLink").show();
+				$("#cardinalErrorReported").hide();
+				$.get("features/cardinal", {
 					"number" : number
 				}, function(data) {
+				$("#cardinal-links").show();
 					$("#cardinal-results").text(data);
-				});*/
-			$("#cardinal-results").text("cien");
+				});
+		//	$("#cardinal-results").text("cien");
 		};
 
 		function syllabicate(word) {
-			/*	$.get("features/syllabicate", {
+				$("#syllabe-links").hide();
+				$("#syllabeErrorLink").show();
+				$("#syllabeErrorReported").hide();
+				$.get("features/syllabicate", {
 					"word" : word
 				}, function(data) {
+				$("#syllabe-links").show();
 					$("#syllabicate-results").text(data);
-				});*/
-			$("#syllabicate-results").text("es,tán,dar");
+				});
+		//	$("#syllabicate-results").text("es,tán,dar");
 		};
 
 		function inflection(singular) {
-			/*	$.get("features/inflection", {
+				$("#plural-links").hide();
+				$("#pluralErrorLink").show();
+				$("#pluralErrorReported").hide();
+				$.get("features/inflection", {
 					"singular" : singular
 				}, function(data) {
-					$("#singular-results").text(data);
+					$("#plural-links").show();
+					$("#plural-results").text(data);
 				});
-			 */
-			$("#singular-results").text("estándares");
+			 
+		//	$("#plural-results").text("estándares");
 		};
-		inflection("estándar");
-		syllabicate("estándar");
-		cardinal("100");
+		
+		$("#pluralBtn").on("click",function(e){ inflection($("#pluralInput").val()); });
+		$("#pluralErrorLink").on("click",function(e){ reportError($("#pluralInput").val(),$("#plural-results").text(),"plural","#pluralErrorLink","#pluralErrorReported"); });
+		$("#syllabeBtn").on("click",function(e){ syllabicate($("#syllabeInput").val()); });
+		$("#syllabeErrorLink").on("click",function(e){ reportError($("#syllabeInput").val(),$("#syllabicate-results").text(),"syllabe","#syllabeErrorLink","#syllabeErrorReported"); });		
+		$("#cardinalBtn").on("click",function(e){ cardinal($("#cardinalInput").val()); });
+		$("#cardinalErrorLink").on("click",function(e){ reportError($("#cardinalInput").val(),$("#cardinal-results").text(),"cardinal","#cardinalErrorLink","#cardinalErrorReported"); });
+		
 	</script>
 </body>
 </html>
